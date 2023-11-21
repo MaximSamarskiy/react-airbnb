@@ -1,0 +1,14 @@
+.property__block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.property__header {
+  display: grid;
+  gap: 24px;
+}
+.property__text {
+  display: grid;
+  gap: 16px;
+}

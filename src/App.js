@@ -1,3 +1,17 @@
+import Page from "./component/page";
+import Header from "./component/header";
+import Title from "./component/title";
+import Photo from "./component/photo";
+import Price from "./component/price";
+import RoomList from "./component/room-list";
+import Property from "./component/property";
+import Description from "./component/description";
+import Amenit from "./component/amenit";
+import Contact from "./component/contact";
+import Additional from "./component/additional";
+import GuestList from "./component/guest-list";
+import NavLink from "./component/link";
+
 function App() {
   const data = {
     listing_name: "Іст-Сайд Біл",
@@ -144,7 +158,60 @@ function App() {
     ],
   };
 
-  return <div>Hello World</div>;
+  return (
+    <Page>
+      <Header />
+      <Title
+        title={data.listing_name}
+        rating={data.reviews_summary.average_rating}
+        review={data.reviews_summary.total_reviews}
+        city={data.location.city}
+        country={data.location.country}
+        superhost={data.superhost}
+      />
+      <Photo src={data.image} name={data.listing_name} />
+      <Price
+        price={data.price.original_price}
+        discount={data.price.discounted_price}
+        currency={data.price.currency}
+        cleaning={data.price.cleaning_fee}
+        service={data.price.service_fee}
+        checkin={data.availability.checkin_date}
+        checkout={data.availability.checkout_date}
+      />
+      <RoomList list={data.roomTypes} />
+      <Description title="Опис" children={data.description} />
+      <Property
+        guests={data.property_details.guests}
+        bedrooms={data.property_details.bedrooms}
+        beds={data.property_details.beds}
+        baths={data.property_details.baths}
+      />
+      <Description title="Про сусідів" children={data.neighborhood_info} />
+      <Amenit />
+      <Contact
+        name={data.contact_info.name}
+        image={data.contact_info.image}
+        response={data.contact_info.response_rate}
+        restime={data.contact_info.response_time}
+        info={data.contact_info.info}
+        phone={data.contact_info.phone}
+      />
+      <Additional
+        house={data.additional_properties.house_rules}
+        cancell={data.additional_properties.cancellation_policy}
+        local={data.additional_properties.local_transportation}
+        host={data.additional_properties.host_languages}
+        special={data.additional_properties.special_offers}
+      />
+      <GuestList list={data.guestReviews} />
+      <NavLink
+        id={data.nearbyAttractions.id}
+        name={data.nearbyAttractions.name}
+        link={data.nearbyAttractions.link}
+      />
+    </Page>
+  );
 }
 
 export default App;

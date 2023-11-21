@@ -1,0 +1,38 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.user__box {
+  display: flex;
+  gap: 20px;
+}
+.user__name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+.title__text {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+.title__sub-block {
+  display: flex;
+  gap: 16px;
+}
+.title__sub-value {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.title__sub-value:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 4px;
+  border-radius: 4px;
+  background-color: #000;
+}

@@ -1,0 +1,37 @@
+.guest__block {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+}
+
+.guest__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.guest {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guest__title {
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.guest__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.room__price {
+  font-size: 20px;
+}
